@@ -1,0 +1,51 @@
+*{margin: 0px; padding: 0px; font-family: "Open Sans";}
+
+.top-dashboard{
+    width: 100%;
+    background: #ededed;
+    padding: 4px;
+}
+
+.user-dash span.caret{margin: 20px 0px;}
+.bred{
+    padding: 6px;
+    width: 100%;
+}
+a.bred{
+    width: initial;
+    color: #2a3f54;
+}
+
+.bg-white{background: #FFF;}
+.form-search{
+    padding: 20px 0px;
+}
+.form-search form{}
+.form-search form input{
+    border-radius: 0px !important;
+}
+.edit{
+    background: #2a3f54;
+    padding: 6px 10px;
+    margin: 0px;
+    color: #FFF;
+    float: left;
+}
+.delete{
+    background: #c5304b;
+    padding: 6px 10px;
+    margin: 0px;
+    color: #FFF;
+    margin: 0px 4px;
+    float: left;
+}
+.btn-insert{
+    background: #2a3f54;
+    padding: 8px 20px;
+    float: left;
+    margin: 10px 0px;
+    color: #FFF;
+    font-size: 1em;
+    font-weight: bold;
+}
+.btn-insert:hover{text-decoration: none;opacity: .9;color: #FFF;}
