@@ -13,40 +13,54 @@
 
 <div class="content-din">
 
+   <div class="row"> 
+
+<div class="col-12">
+    <div class="messages">
+        @include('panel.includes.alerts')
+    </div>
+</div>
+
+<div class="col-6">
+    <div class="class-btn-insert ">
+        <a href="{{route('users.create')}}" class="btn-insert rounded">
+            <i class="fas fa-plus"></i>
+            Cadastrar
+        </a>
+    </div>
+</div>
+
+<div class="col-6">
     <div class="form-search">
         {!! Form::open(['route' => 'users.search', 'class' => 'form form-inline']) !!}
             {!! Form::text('key_search', null, ['class' => 'form-control', 'placeholder' => 'O que deseja encontrar?']) !!}
 
-            <button class="btn btn-search">Pesquisar</button>
-        {!! Form::close() !!}
+            <button class="btn btn-info"><i class="fas fa-search"></i></button>
+        {!! Form::close() !!}        
+    </div>
+</div>
 
-        @if(isset($dataForm['key_search']))
-            <div class="alert alert-info">
+<div class="col-12">
+    @if(isset($dataForm['key_search']))
+            <div class="alert alert-success p-1 mt-2">
                 <p>
                     <a href="{{route('users.index')}}"><i class="fas fa-sync-alt"></i></a>
                     Resultados para: <strong>{{$dataForm['key_search']}}</strong>
                 </p>
             </div>
         @endif
-    </div>
+</div>
 
-    <div class="messages">
-        @include('panel.includes.alerts')
-    </div>
 
-    <div class="class-btn-insert">
-        <a href="{{route('users.create')}}" class="btn-insert">
-            <i class="fas fa-plus"></i>
-            Cadastrar
-        </a>
-    </div>
+   </div>
+
     
-    <table class="table table-striped">
+    <table class="table table-striped ">
         <tr>
             <th>Imagem</th>
             <th>Nome</th>
             <th>E-mail</th>
-            <th width="200">Ações</th>
+            <th width="300">Ações</th>
         </tr>
 
         @forelse($users as $user)
@@ -65,8 +79,8 @@
                     {{ $user->email }}
                 </td>
                 <td>
-                    <a href="{{route('users.edit', $user->id)}}" class="edit">Editar</a>
-                    <a href="{{route('users.show', $user->id)}}" class="delete"><i class="fas fa-eye"></i> View</a>
+                    <a href="{{route('users.edit', $user->id)}}" class="edit rounded"><i class="fas fa-edit"></i> Editar</a>
+                    <a href="{{route('users.show', $user->id)}}" class="delete rounded"><i class="fas fa-eye"></i> Visualizar</a>
                 </td>
             </tr>
         @empty
