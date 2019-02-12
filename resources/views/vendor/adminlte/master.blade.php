@@ -28,8 +28,7 @@
     <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" >
 
     <!--CSS Person-->
-    <link rel="stylesheet" href="{{url('assets/panel/css/especializati.css')}}">
-    <link rel="stylesheet" href="{{url('assets/panel/css/especializati-reset.css')}}">
+    <link rel="stylesheet" href="{{url('assets/panel/css/dashboard.css')}}">
 
     @if(config('adminlte.plugins.select2'))
         <!-- Select2 -->

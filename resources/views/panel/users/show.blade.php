@@ -1,11 +1,13 @@
-@extends('panel.layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Usuários')
 
 @section('content')
 
 <div class="bred">
-    <a href="{{route('panel')}}" class="bred">Home > </a>
-    <a href="{{route('users.index')}}" class="bred">Usuários > </a>
-    <a href="" class="bred">{{$user->name}}</a>
+    <a href="{{route('panel')}}" class="bred text-info pr-0">Home /</a>
+    <a href="{{route('users.index')}}" class="bred text-info pr-0">Usuários /</a>
+    <a href="" class="bred pl-0">{{$user->name}}</a>
 </div>
 
 <div class="title-pg">
