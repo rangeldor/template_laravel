@@ -10,18 +10,21 @@
     <a href="" class="bred pl-0">Editar</a>
 </div>
 
-<div class="title-pg">
-    <h1 class="title-pg">Editar Usuário {{ $user->name }}</h1>
+<div>
+    <h1>Editar Usuário {{ $user->name }}</h1>
 </div>
 
-<div class="content-din">
+<div class="container-fluid">
+<div class="row card">
+    <div class="card-body rounded shadow bg-light">
 
 @include('panel.includes.errors')
 
 {!! Form::model($user, ['route' => ['users.update', $user->id], 'class' => 'form form-search form-ds', 'method' => 'PUT']) !!}
     @include('panel.users.form')
 {!! Form::close() !!}
-
+</div>
+</div>
 </div><!--Content Dinâmico-->
 
 @endsection

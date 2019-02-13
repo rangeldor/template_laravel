@@ -10,18 +10,22 @@
     <a href="" class="bred pl-0">Cadastrar</a>
 </div>
 
-<div class="title-pg">
-    <h1 class="title-pg">Cadastrar Usuário</h1>
+<div>
+    <h1>Cadastrar Usuário</h1>
 </div>
 
-<div class="">
+<div class="container-fluid">
+<div class="row card">
+    <div class="card-body rounded shadow bg-light">
 
 @include('panel.includes.errors')
 
-{!! Form::open(['route' => 'users.store', 'class' => 'form form-search form-ds']) !!}
+{!! Form::open(['route' => 'users.store', 'class' => 'was-validated col-lg-12 pt-4']) !!}
     @include('panel.users.form')
 {!! Form::close() !!}
-
+</div>
+</div>
 </div><!--Content Dinâmico-->
+
 
 @endsection

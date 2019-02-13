@@ -10,11 +10,13 @@
     <a href="" class="bred pl-0">{{$user->name}}</a>
 </div>
 
-<div class="title-pg">
-    <h1 class="title-pg">Detalhes do Usuário: {{$user->name}}</h1>
+<div>
+    <h1>Detalhes do Usuário: {{$user->name}}</h1>
 </div>
 
-<div class="content-din">
+<div class="container-fluid">
+<div class="row card">
+    <div class="card-body rounded shadow bg-light">
     <ul>
         <li>
             @if($user->image)
@@ -38,7 +40,8 @@
         <button class="btn btn-danger">Deletar o Usuário {{$user->name}}</button>
     </div>
 {!! Form::close() !!}
-
+</div>
+</div>
 </div><!--Content Dinâmico-->
 
 @endsection
