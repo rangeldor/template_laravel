@@ -29,6 +29,7 @@
 
     <!--CSS Person-->
     <link rel="stylesheet" href="{{url('assets/panel/css/dashboard.css')}}">
+    <link rel="stylesheet" href="{{url('assets/panel/css/dashboard.reset.css')}}">
 
     @if(config('adminlte.plugins.select2'))
         <!-- Select2 -->
