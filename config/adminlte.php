@@ -122,8 +122,19 @@ return [
         'CONFIGURAÇÕES',
         [
             'text' => 'Usuários',
-            'route'  => "users.index",
             'icon' => 'users',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'route'  => 'users.index',
+                    'icon' => 'list-ul'
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'route'  => 'users.create',
+                    'icon' => 'plus'
+                ],
+            ],
         ],
         [
             'text' => 'Change Password',

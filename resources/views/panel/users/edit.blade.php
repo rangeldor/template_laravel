@@ -11,7 +11,7 @@
 </div>
 
 <div>
-    <h1>Editar Usuário {{ $user->name }}</h1>
+    <h1>Editar Usuário: {{ $user->name }}</h1>
 </div>
 
 <div class="container-fluid">

@@ -20,8 +20,8 @@ class CheckIfIsAdmin
             return redirect()->back();
 
         // Redireciona caso não seja um administrador
-        if ( !auth()->user()->is_admin )
-            return redirect()->back();
+       // if ( !auth()->user()->is_admin )
+         //   return redirect()->back();
 
         return $next($request);
     }

@@ -1,6 +1,6 @@
 <?php
 
-$this->group(['prefix' => 'panel', 'namespace' => 'Panel', 'middleware' => ['auth', 'admin']], function(){
+$this->group(['prefix' => 'panel', 'namespace' => 'Panel', 'middleware' => ['auth']], function(){
 
     $this->any('brands/search', 'BrandController@search')->name('brands.search');
     $this->get('brands/{id}/planes', 'BrandController@planes')->name('brands.planes');
@@ -32,7 +32,6 @@ $this->group(['prefix' => 'panel', 'namespace' => 'Panel', 'middleware' => ['aut
     $this->get('/', 'PanelController@index')->name('panel');
 
 });
-
 
 
 $this->group(['middleware' => 'auth'], function(){

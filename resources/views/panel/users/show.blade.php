@@ -18,18 +18,18 @@
 <div class="row card">
     <div class="card-body rounded shadow bg-light">
     <ul>
-        <li>
+      {{--  <li>
             @if($user->image)
                 <img src="{{url("storage/users/{$user->image}")}}" alt="{{$user->id}}" style="max-width: 60px;">
             @else
                 <img src="{{url('assets/panel/imgs/no-image.png')}}" alt="{{$user->id}}" style="max-width: 100px;">
             @endif
+        </li> --}}
+        <li>
+            <i class="fas fa-signature"></i> Nome: <strong>{{$user->name}}</strong>
         </li>
         <li>
-            Nome: <strong>{{$user->name}}</strong>
-        </li>
-        <li>
-            E-mail: <strong>{{$user->email}}</strong>
+            <i class="fas fa-envelope"></i> E-mail: <strong>{{$user->email}}</strong>
         </li>     
     </ul>
 

@@ -13,10 +13,10 @@
     {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Senha', 'for' => 'inputPassword', 'required']) !!}
 </div>
 
-<div class="col-12 mb-3">
+{{-- <div class="col-12 mb-3">
     {!! Form::checkbox('is_admin', true, null) !!}
     <label for="validationServer01">É admin?</label>
-</div>
+</div> --}}
 
 <div class="pt-4 pb-5 col-12" >
     <button type="submit" class="btn btn-success" name="SendFormContato" value="Enviar"><i class="fas fa-check"></i> Enviar</button>

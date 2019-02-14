@@ -21,14 +21,14 @@
                 </div>
             </div>
             
-            <div class="col-6">
+          {{--  <div class="col-6">
                 <div class="class-btn-insert ">
                     <a href="{{route('users.create')}}" class="btn-insert rounded">
                         <i class="fas fa-plus"></i>
                         Cadastrar
                     </a>
                 </div>
-            </div>
+            </div> --}}
             
             <div class="col-6">
                 <div class="form-search">
@@ -55,7 +55,7 @@
         
         <table class="table table-striped ">
             <tr>
-                <th>Imagem</th>
+              <!--  <th>Imagem</th> -->
                 <th>Nome</th>
                 <th>E-mail</th>
                 <th width="300">Ações</th>
@@ -63,13 +63,13 @@
             
             @forelse($users as $user)
             <tr>
-                <td>
+              <!--  <td>
                     @if($user->image)
                     <img src="{{url("storage/users/{$user->image}")}}" alt="{{$user->id}}" style="max-width: 60px;">
                     @else
                     <img src="{{url('assets/panel/imgs/no-image.png')}}" alt="{{$user->id}}" style="max-width: 100px;">
                     @endif
-                </td>
+                </td> -->
                 <td>
                     {{ $user->name }}
                 </td>
