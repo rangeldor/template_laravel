@@ -108,12 +108,7 @@ return [
     */
 
     'menu' => [
-        'MENU PRINCIPAL ',
-        [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
+        'MENU PRINCIPAL ',        
         [
             'text'        => 'Home',
             'url'         => 'panel',
@@ -123,6 +118,7 @@ return [
         [
             'text' => 'Usuários',
             'icon' => 'users',
+            'can'  => 'adm',
             'submenu' => [
                 [
                     'text' => 'Listar',

@@ -3,10 +3,12 @@
 @section('title', 'Usuários')
 
 @section('content_header')
+
 <div class="bred">
     <a href="{{route('panel')}}" class="bred text-info pr-0">Home /</a>
     <a href="" class="bred pl-0">Usuários</a>
 </div>
+
 @stop
 
 @section('content')
