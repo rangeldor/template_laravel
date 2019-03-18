@@ -12,7 +12,6 @@
 
 @section('content')
 
-
 @role('super-admin')
     I am a super-admin!
 @else
@@ -25,11 +24,4 @@ teste permissao
 
 @endsection
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
-@stop
 
