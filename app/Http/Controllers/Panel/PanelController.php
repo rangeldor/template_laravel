@@ -17,6 +17,17 @@ class PanelController extends Controller
 {
     public function index()
     {
+/*        $user = User::create([
+    'name' => 'Styde',
+    'email' => 'admin@styde.net',
+    'password' => bcrypt('secret')
+]);
+ 
+// Asignación del rol
+$user->assignRole('super-admin');
+
+*/
+
         $totalBrands    = Brand::count();
         $totalPlanes    = Plane::count();
         $totalStates    = State::count();

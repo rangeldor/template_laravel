@@ -13,6 +13,15 @@
 @section('content')
 
 
+@role('super-admin')
+    I am a super-admin!
+@else
+    I am not a super-admin...
+@endrole
+
+@can('edit articles')
+teste permissao
+@endcan
 
 @endsection
 

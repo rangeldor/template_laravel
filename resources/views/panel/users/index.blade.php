@@ -55,7 +55,7 @@
             
         </div>
         
-        <table class="table table-striped ">
+        <table id="datatable" class="table table-striped table-bordered" style="width:100%">
             <tr>
               <!--  <th>Imagem</th> -->
                 <th>Nome</th>

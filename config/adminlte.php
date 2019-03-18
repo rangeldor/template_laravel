@@ -118,7 +118,7 @@ return [
         [
             'text' => 'Usuários',
             'icon' => 'users',
-            'can'  => 'adm',
+            'role'  => 'super-admin',
             'submenu' => [
                 [
                     'text' => 'Listar',

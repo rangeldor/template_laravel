@@ -5,10 +5,13 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Reserve;
+use Spatie\Permission\Traits\HasRoles;
+
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -27,26 +30,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-     public function roles()
-    {
-        return $this->belongsToMany(\App\Models\Role::class);
-    }
-    
-    public function hasPermission(Permission $permission)
-    {
-        return $this->hasAnyRoles($permission->roles);
-    }
-    
-    public function hasAnyRoles($roles)
-    {
-        if(is_array($roles) || is_object($roles) ) {
-            return !! $roles->intersect($this->roles)->count();
-        }
-        
-        return $this->roles->contains('name', $roles);
-    }
-
+   
     public function newUser($request)
     {
         $this->name     = $request->name;
