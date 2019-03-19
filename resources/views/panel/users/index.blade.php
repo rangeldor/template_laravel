@@ -13,8 +13,8 @@
 
 @section('content')
 
-<div class="card">
-    <div class="card-body rounded shadow bg-light" style="padding: 0.5rem;">         
+<div class="card" >
+    <div class="card-body rounded bg-light" style="padding: 0.5rem; box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0,192,239,.4);">         
             
             <div class="col-12">
                 <div class="messages">

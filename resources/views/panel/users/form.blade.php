@@ -13,6 +13,11 @@
     {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Senha', 'for' => 'inputPassword', 'required']) !!}
 </div>
 
+<div class="col-12 mb-3">
+    <label for="inputPassword"><i class="fas fa-key"></i> Confirmar Senha</label>
+    {!! Form::password('confirm_password', ['class' => 'form-control', 'placeholder' => 'Confirme a Senha', 'for' => 'inputPassword', 'required']) !!}
+</div>
+
 {{-- <div class="col-12 mb-3">
     {!! Form::checkbox('is_admin', true, null) !!}
     <label for="validationServer01">É admin?</label>

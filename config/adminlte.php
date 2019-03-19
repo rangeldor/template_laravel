@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'Marketing&Code',
 
     'title_prefix' => '',
 
@@ -30,9 +30,10 @@ return [
     |
     */
 
-    'logo' => '<img src="../assets/panel/imgs/icone-especializati.png" alt="Nome da Empresa" class="logo-painel">',
-
-    'logo_mini' => '<img src="../assets/panel/imgs/icone-especializati.png" alt="Nome da Empresa" class="logo-painel">',
+   // 'logo' => '<img src="../assets/panel/imgs/icone-especializati.png" alt="Nome da Empresa" class="logo-painel">',
+   'logo' => 'Marketing&Code',
+   //'logo_mini' => '<img src="../assets/panel/imgs/icone-especializati.png" alt="Nome da Empresa" class="logo-painel">',
+   'logo_mini' => 'M&C',
 
     /*
     |--------------------------------------------------------------------------
@@ -132,47 +133,23 @@ return [
                 ],
             ],
         ],
-        [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
+        [ 
+            'text' => 'Alterar senha',
+           // 'url'  => '',
             'icon' => 'lock',
         ],
         [
-            'text'    => 'Multilevel',
+            'text'    => 'Controle de Perfil',
             'icon'    => 'share',
             'submenu' => [
                 [
-                    'text' => 'Level One',
+                    'text' => 'Permissão',
                     'url'  => '#',
                 ],
                 [
-                    'text'    => 'Level One',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Level Two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
+                    'text'    => 'Tipo de Perfil',
+                    'url'     => '#',  
+                ],                
             ],
         ],
         'LABELS',

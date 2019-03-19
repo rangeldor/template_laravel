@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateProfileUserFormRequest;
 use App\User;
 use Gate;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\AnonymousNotifiable;
 
 class UserController extends Controller
 {
@@ -59,16 +60,22 @@ class UserController extends Controller
      */
     public function store(StoreUpdateUserFormRequest $request)
     {
-        if ($this->user->newUser($request)) {
+        if($request->password == $request->confirm_password)
+        {
+            if ($this->user->newUser($request)) {
+                return redirect()
+                    ->route('users.index')
+                    ->with('success', 'Cadastro realizado com sucesso!');
+            } else {
+                return redirect()
+                    ->back()
+                    ->with('error', 'Falha ao cadastrar!');
+            }
+        }else {
             return redirect()
-                ->route('users.index')
-                ->with('success', 'Cadastro realizado com sucesso!');
-        } else {
-            return redirect()
-                ->back()
-                ->with('error', 'Falha ao cadastrar!');
+                    ->back()
+                    ->with('error', 'Falha ao cadastrar! Senha e confirmar Senha não são iguais!');
         }
-
     }
 
     /**
@@ -220,4 +227,5 @@ class UserController extends Controller
 
         return redirect()->route('home');
     }
+
 }
