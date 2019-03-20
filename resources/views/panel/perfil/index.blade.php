@@ -1,12 +1,12 @@
 @extends('adminlte::page')
 
-@section('title', 'Usuários')
+@section('title', 'Perfis')
 
 @section('content_header')
 
 <div class="bred">
     <a href="{{route('panel')}}" class="bred text-info pr-0">Home /</a>
-    <a href="" class="bred pl-0">Usuários</a>
+    <a href="" class="bred pl-0">Controle de Perfis</a>
 </div>
 
 @stop
@@ -26,13 +26,16 @@
             <thead>
                 <tr>
                     <!--  <th>Imagem</th> -->
-                    <th>Nome</th>
-                    <th>E-mail</th>
+                    <th>Perfil</th>
+                    <th>Permissões</th>
                     <th width="250">Ações</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse($users as $user)
+                @php
+                    $teste = "";
+                @endphp
+                @forelse($perfis as $key => $perfil)
                 <tr>
                     {{--  <td>
                         @if($user->image)
@@ -42,16 +45,30 @@
                         @endif
                     </td> --}}
                     <td>
-                        {{ $user->name }}
+                        {{ $perfil->role_name }}
                     </td>
                     <td>
-                        {{ $user->email }}
+                       @foreach ($permissoes as $key2 => $per)
+                          @if($perfil->role_id != $per->role_id)
+                             @continue;
+                          @endif    
+                            @php
+                             $teste .= $per->permission_name . "|";   
+                            @endphp                                          
+                       @endforeach
+                       @php
+                        $teste = substr($teste,0,strlen($teste)-1)
+                       @endphp
+                       {{ $teste }}
                     </td>
                     <td>
-                        <a href="{{route('users.edit', $user->id)}}" class="edit rounded"><i class="fas fa-edit"></i> Editar</a>
-                        <a href="{{route('users.show', $user->id)}}" class="delete rounded"><i class="fas fa-eye"></i> Visualizar</a>
+                        <a href="{{route('perfil.edit', $perfil->role_id)}}" class="edit rounded"><i class="fas fa-edit"></i> Editar</a>
+                        <a href="{{route('perfil.show', $perfil->role_id)}}" class="delete rounded"><i class="fas fa-eye"></i> Visualizar</a>
                     </td>
                 </tr>
+                 @php
+                  $teste = "";   
+                 @endphp
                 @empty
                 
                 @endforelse
@@ -60,18 +77,12 @@
                 <tr>
                     <!--  <th>Imagem</th> -->
                     <th>Nome</th>
-                    <th>E-mail</th>
+                    <th>Permissões</th>
                     <th width="250">Ações</th>
                 </tr>
             </tfoot>
-        </table>
-        
-        @if(isset($dataForm))
-        {!! $users->appends($dataForm)->links() !!}
-        @else
-        {!! $users->links() !!}
-        @endif
-    </div>     
+        </table>                
+    </div>
 </div>
 <!--Content Dinâmico-->
 

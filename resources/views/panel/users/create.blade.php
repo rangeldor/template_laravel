@@ -7,7 +7,7 @@
 <div class="bred">
     <a href="{{route('panel')}}" class="bred text-info pr-0">Home /</a>
     <a href="{{route('users.index')}}" class="bred text-info pr-0">Usuários /</a>
-    <a href="" class="bred pl-0">Cadastrar</a>
+    <a href="" class="bred pl-0">Cadastrar Usuários</a>
 </div>
 
 <div>

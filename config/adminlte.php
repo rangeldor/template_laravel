@@ -143,12 +143,16 @@ return [
             'icon'    => 'share',
             'submenu' => [
                 [
+                    'text' => 'Listar Perfis',
+                    'route'  => 'perfil.index',
+                    'icon' => 'list-ul'
+                ],
+                [
                     'text' => 'Cadastrar Perfis',
                     'route'  => 'perfil.create',
                     'icon' => 'plus'
                 ],
             ],    
-
         ],
         'LABELS',
         [

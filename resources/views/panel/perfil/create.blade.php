@@ -1,11 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Perfil')
+@section('title', 'Perfis')
 
 @section('content')
 
 <div class="bred">
-    <a href="{{route('panel')}}" class="bred text-info pr-0">Home</a>
+    <a href="{{route('panel')}}" class="bred text-info pr-0">Home /</a>
+    <a href="{{route('perfil.index')}}" class="bred text-info pr-0">Controle de Perfis /</a>
+    <a href="" class="bred pl-0">Cadastrar Perfis</a>
 </div>
 
 <div>
