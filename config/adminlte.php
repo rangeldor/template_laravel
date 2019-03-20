@@ -122,12 +122,12 @@ return [
             'role'  => 'super-admin',
             'submenu' => [
                 [
-                    'text' => 'Listar',
+                    'text' => 'Listar Usuários',
                     'route'  => 'users.index',
                     'icon' => 'list-ul'
                 ],
                 [
-                    'text' => 'Cadastrar',
+                    'text' => 'Cadastrar Usuários',
                     'route'  => 'users.create',
                     'icon' => 'plus'
                 ],
@@ -139,18 +139,16 @@ return [
             'icon' => 'lock',
         ],
         [
-            'text'    => 'Controle de Perfil',
+            'text'    => 'Controle de Perfis',
             'icon'    => 'share',
             'submenu' => [
                 [
-                    'text' => 'Permissão',
-                    'url'  => '#',
+                    'text' => 'Cadastrar Perfis',
+                    'route'  => 'perfil.create',
+                    'icon' => 'plus'
                 ],
-                [
-                    'text'    => 'Tipo de Perfil',
-                    'url'     => '#',  
-                ],                
-            ],
+            ],    
+
         ],
         'LABELS',
         [
