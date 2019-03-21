@@ -9,15 +9,22 @@ use App\User;
 use Gate;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\AnonymousNotifiable;
+use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
     private $user;
+    private $role;
+    private $permission;
     private $totalPage = 20;
 
-    public function __construct(User $user)
+    public function __construct(User $user, Role $role, Permission $permission)
     {
         $this->user = $user;
+        $this->role = $role;
+        $this->permission = $permission;
 
       /*  if (Gate::denies('adm')) {
             return abort(403, 'Não Autorizado!');
@@ -49,7 +56,9 @@ class UserController extends Controller
     {
         $title = 'Cadastrar Novo Usuário';
 
-        return view('panel.users.create', compact('title'));
+        $role = $this->role->pluck( 'name', 'id');
+
+        return view('panel.users.create', compact('title', 'role'));
     }
 
     /**
@@ -60,9 +69,20 @@ class UserController extends Controller
      */
     public function store(StoreUpdateUserFormRequest $request)
     {
+        $role = $this->role->find($request->role);
+        
         if($request->password == $request->confirm_password)
         {
-            if ($this->user->newUser($request)) {
+            $user = User::create([
+                'name' => "$request->name",
+                'email' => "$request->email",
+                'password' => bcrypt("$request->password"),
+                ]);            
+
+            if ($user) {
+                dd($user);
+                $user->assignRole("$role->name");
+                
                 return redirect()
                     ->route('users.index')
                     ->with('success', 'Cadastro realizado com sucesso!');

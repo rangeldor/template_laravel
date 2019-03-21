@@ -10,22 +10,22 @@
     </div>
 
     <div class="col-3 mb-3">
-        {!! Form::checkbox('cadastrar', true, true) !!}
+        {!! Form::checkbox('cadastrar', true, isset($cadastrar) ? true : false) !!}
         <label for="validationServer01">Cadastrar</label>
     </div>
     
     <div class="col-3 mb-3">
-        {!! Form::checkbox('visualizar', true, false) !!}
+        {!! Form::checkbox('visualizar', true, isset($visualizar) ? true : false) !!}
         <label for="validationServer01">Visualizar</label>
     </div> 
     
     <div class="col-3 mb-3">
-        {!! Form::checkbox('atualizar', true, false) !!}
+        {!! Form::checkbox('atualizar', true,  isset($atualizar) ? true : false) !!}
         <label for="validationServer01">Atualizar</label>
     </div> 
     
     <div class="col-3 mb-3">
-        {!! Form::checkbox('excluir', true, false) !!}
+        {!! Form::checkbox('excluir', true, isset($excluir) ? true : false) !!}
         <label for="validationServer01">Excluir</label>
     </div> 
     

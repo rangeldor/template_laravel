@@ -135,7 +135,7 @@ return [
         ],       
         [
             'text'    => 'Perfis',
-            'icon'    => 'share',
+            'icon'    => 'user-circle',
             'submenu' => [
                 [
                     'text' => 'Listar Perfis',
