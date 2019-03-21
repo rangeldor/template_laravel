@@ -114,12 +114,12 @@ return [
             'text'        => 'Home',
             'url'         => 'panel',
             'icon'        => 'home',
-        ],
-        'CONFIGURAÇÕES',
+        ],        
+        'CONTROLES',
         [
             'text' => 'Usuários',
             'icon' => 'users',
-            'role'  => 'super-admin',
+            'role'  => 'Administrador',
             'submenu' => [
                 [
                     'text' => 'Listar Usuários',
@@ -132,14 +132,9 @@ return [
                     'icon' => 'plus'
                 ],
             ],
-        ],
-        [ 
-            'text' => 'Alterar senha',
-           // 'url'  => '',
-            'icon' => 'lock',
-        ],
+        ],       
         [
-            'text'    => 'Controle de Perfis',
+            'text'    => 'Perfis',
             'icon'    => 'share',
             'submenu' => [
                 [
@@ -153,20 +148,7 @@ return [
                     'icon' => 'plus'
                 ],
             ],    
-        ],
-        'LABELS',
-        [
-            'text'       => 'Important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
-        ],
+        ],       
     ],
 
     /*

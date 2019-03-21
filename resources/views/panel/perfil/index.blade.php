@@ -53,11 +53,11 @@
                              @continue;
                           @endif    
                             @php
-                             $teste .= $per->permission_name . "|";   
+                             $teste .= $per->permission_name . " | ";   
                             @endphp                                          
                        @endforeach
                        @php
-                        $teste = substr($teste,0,strlen($teste)-1)
+                        $teste = substr($teste,0,strlen($teste)-2)
                        @endphp
                        {{ $teste }}
                     </td>

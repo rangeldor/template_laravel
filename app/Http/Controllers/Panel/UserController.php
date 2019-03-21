@@ -130,7 +130,7 @@ class UserController extends Controller
 
         if ($user->updateUser($request)) {
             return redirect()
-                ->route('users.index')
+                ->back()
                 ->with('success', 'Atualizado com sucesso!');
         } else {
             return redirect()

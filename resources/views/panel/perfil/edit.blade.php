@@ -1,19 +1,17 @@
 @extends('adminlte::page')
 
-@section('title', 'Usuários')
+@section('title', 'Perfil')
 
 @section('content')
 
 <div class="bred">
     <a href="{{route('panel')}}" class="bred text-info pr-0">Home /</a>
-    @role('Administrador')
-    <a href="{{route('users.index')}}" class="bred text-info pr-0">Usuários /</a>
-    @endrole
+    <a href="{{route('perfil.index')}}" class="bred text-info pr-0">Perfis /</a>
     <a href="" class="bred pl-0">Editar</a>
 </div>
 
 <div>
-    <h1>Editar Usuário: {{ $user->name }}</h1>
+    <h1>Editar Perfil: {{ $role->name }}</h1>
 </div>
 
 <div class="container-fluid">
@@ -27,8 +25,8 @@
 
 @include('panel.includes.errors')
 
-{!! Form::model($user, ['route' => ['users.update', $user->id], 'class' => 'form form-search form-ds', 'method' => 'PUT']) !!}
-    @include('panel.users.form')
+{!! Form::model($role, ['route' => ['perfil.update', $role->id], 'class' => 'form form-search form-ds', 'method' => 'PUT']) !!}
+    @include('panel.perfil.form')
 {!! Form::close() !!}
 </div>
 </div>
