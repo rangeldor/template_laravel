@@ -67,9 +67,9 @@ class UserController extends Controller
     {
         $title = 'Cadastrar Novo Usuário';
 
-        $role = $this->role->pluck( 'name', 'id');
+        $roles = $this->role->pluck( 'name', 'id');
 
-        return view('panel.users.create', compact('title', 'role'));
+        return view('panel.users.create', compact('title', 'roles'));
     }
 
     /**
@@ -81,7 +81,14 @@ class UserController extends Controller
     public function store(StoreUpdateUserFormRequest $request)
     {
         $role = $this->role->find($request->role);
-        
+
+        if(empty($request->password))
+        {
+            return redirect()
+            ->back()
+            ->with('error', 'Falha ao cadastrar! Senha não pode ser vazia!');
+        }
+
         if($request->password == $request->confirm_password)
         {
             $user = User::create([
@@ -97,12 +104,16 @@ class UserController extends Controller
                 return redirect()
                     ->route('users.index')
                     ->with('success', 'Cadastro realizado com sucesso!');
-            } else {
+            } 
+            else 
+            {
                 return redirect()
                     ->back()
                     ->with('error', 'Falha ao cadastrar!');
             }
-        }else {
+        }
+        else 
+        {
             return redirect()
                     ->back()
                     ->with('error', 'Falha ao cadastrar! Senha e confirmar Senha não são iguais!');
@@ -140,23 +151,21 @@ class UserController extends Controller
             return redirect()->back();
         }
 
-        $select = DB::select("select
-                            
-                            roles.name as name,
-                            model_has_roles.role_id as id
-                            
-                            from users
+        $select = DB::select("  select
+                                model_has_roles.role_id as id
+                                
+                                from users
 
-                            inner join model_has_roles on users.id = model_has_roles.model_id
-                            inner join roles on roles.id = model_has_roles.role_id
-                            
-                            where users.id = $id");       
+                                inner join model_has_roles on users.id = model_has_roles.model_id
+                                                        
+                                where users.id = $id"); 
 
-        $role = array($select[0]->id => $select[0]->name);
+        $roles = $this->role->pluck( 'name', 'id');
+        $role_id = $select[0]->id;
        
         $title = "Editar Usuário: {$user->name}";
 
-        return view('panel.users.edit', compact('title', 'user', 'role'));
+        return view('panel.users.edit', compact('title', 'user', 'role_id','roles'));
     }
 
     /**
@@ -167,17 +176,16 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(StoreUpdateUserFormRequest $request, $id)
-    {
+    {        
         $user = $this->user->find($id);
         if (!$user) {
             return redirect()->back();
         }
 
-        // All current roles will be removed from the user and replaced by the array given
-        //$user->syncRoles(['writer', 'admin']);
-
-
+        $role = $this->role->find($request->role);
+       
         if ($user->updateUser($request)) {
+            $user->syncRoles(["$role->name"]);
             return redirect()
                 ->back()
                 ->with('success', 'Atualizado com sucesso!');
@@ -186,7 +194,6 @@ class UserController extends Controller
                 ->back()
                 ->with('error', 'Falha ao atualizar!');
         }
-
     }
 
     /**
@@ -274,7 +281,7 @@ class UserController extends Controller
     {
         \Auth::logout();
 
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
 
 }
