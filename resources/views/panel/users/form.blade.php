@@ -19,7 +19,7 @@
 </div>
 <div class="col-12 mb-3">
     <label><i class="fas fa-user-circle"></i> Perfil</label>
-    {{ Form::select('role', $role, null, ['class' => 'form-control'])}}
+    {{ Form::select('role', isset($role) ? $role : [], null, ['class' => 'form-control' ])}}
 </div>
 {{-- <div class="col-12 mb-3">
     {!! Form::checkbox('is_admin', true, null) !!}

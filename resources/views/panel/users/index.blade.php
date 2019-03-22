@@ -28,6 +28,7 @@
                     <!--  <th>Imagem</th> -->
                     <th>Nome</th>
                     <th>E-mail</th>
+                    <th>Perfil</th>
                     <th width="250">Ações</th>
                 </tr>
             </thead>
@@ -48,6 +49,9 @@
                         {{ $user->email }}
                     </td>
                     <td>
+                       {{ $user->role_name }}
+                    </td>
+                    <td>
                         <a href="{{route('users.edit', $user->id)}}" class="edit rounded"><i class="fas fa-edit"></i> Editar</a>
                         <a href="{{route('users.show', $user->id)}}" class="delete rounded"><i class="fas fa-eye"></i> Visualizar</a>
                     </td>
@@ -61,16 +65,12 @@
                     <!--  <th>Imagem</th> -->
                     <th>Nome</th>
                     <th>E-mail</th>
+                    <th>Perfil</th>
                     <th width="250">Ações</th>
                 </tr>
             </tfoot>
         </table>
-        
-        @if(isset($dataForm))
-        {!! $users->appends($dataForm)->links() !!}
-        @else
-        {!! $users->links() !!}
-        @endif
+      
     </div>     
 </div>
 <!--Content Dinâmico-->

@@ -42,7 +42,18 @@ class UserController extends Controller
     {
         $title = 'Usuários';
 
-        $users = $this->user->paginate($this->totalPage);
+        $users = DB::select("select 
+
+                            users.id,
+                            users.name,
+                            users.email,
+                            model_has_roles.role_id,
+                            roles.name as role_name
+
+                            from users
+
+                            inner join model_has_roles on users.id = model_has_roles.model_id
+                            inner join roles on roles.id = model_has_roles.role_id");
 
         return view('panel.users.index', compact('title', 'users'));
     }
@@ -79,8 +90,8 @@ class UserController extends Controller
                 'password' => bcrypt("$request->password"),
                 ]);            
 
-            if ($user) {
-                dd($user);
+            if ($user) 
+            {
                 $user->assignRole("$role->name");
                 
                 return redirect()
@@ -129,9 +140,23 @@ class UserController extends Controller
             return redirect()->back();
         }
 
+        $select = DB::select("select
+                            
+                            roles.name as name,
+                            model_has_roles.role_id as id
+                            
+                            from users
+
+                            inner join model_has_roles on users.id = model_has_roles.model_id
+                            inner join roles on roles.id = model_has_roles.role_id
+                            
+                            where users.id = $id");       
+
+        $role = array($select[0]->id => $select[0]->name);
+       
         $title = "Editar Usuário: {$user->name}";
 
-        return view('panel.users.edit', compact('title', 'user'));
+        return view('panel.users.edit', compact('title', 'user', 'role'));
     }
 
     /**
@@ -147,6 +172,10 @@ class UserController extends Controller
         if (!$user) {
             return redirect()->back();
         }
+
+        // All current roles will be removed from the user and replaced by the array given
+        //$user->syncRoles(['writer', 'admin']);
+
 
         if ($user->updateUser($request)) {
             return redirect()
