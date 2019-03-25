@@ -26,6 +26,9 @@ class UserController extends Controller
         $this->role = $role;
         $this->permission = $permission;
 
+       // $this->middleware(['permission:cadastrar visualizar atualizar excluir']);
+
+
       /*  if (Gate::denies('adm')) {
             return abort(403, 'Não Autorizado!');
         }

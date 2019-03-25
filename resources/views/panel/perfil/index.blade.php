@@ -62,8 +62,13 @@
                        {{ $teste }}
                     </td>
                     <td>
-                        <a href="{{route('perfil.edit', $perfil->role_id)}}" class="edit rounded"><i class="fas fa-edit"></i> Editar</a>
-                        <a href="{{route('perfil.show', $perfil->role_id)}}" class="delete rounded"><i class="fas fa-eye"></i> Visualizar</a>
+                        @can('atualizar')
+                            <a href="{{route('perfil.edit', $perfil->role_id)}}" class="edit rounded"><i class="fas fa-edit"></i> Editar</a>
+                        @endcan
+
+                        @can('excluir')
+                            <a href="{{route('perfil.show', $perfil->role_id)}}" class="delete rounded"><i class="fas fa-eye"></i> Visualizar</a>
+                        @endcan
                     </td>
                 </tr>
                  @php

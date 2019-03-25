@@ -31,12 +31,13 @@
     </ul>
 
 @include('panel.includes.alerts')
-
+@can('excluir')
 {!! Form::open(['route' => ['perfil.destroy', $role->id], 'class' => 'form form-search form-ds', 'method' => 'DELETE']) !!}
     <div class="form-group">
         <button class="btn btn-danger"><i class="fas fa-trash-alt"></i> Deletar o Perfil {{$role->name}}</button>
     </div>
 {!! Form::close() !!}
+@endcan
 </div>
 </div>
 </div><!--Content Dinâmico-->

@@ -31,8 +31,9 @@
     {!! Form::checkbox('is_admin', true, null) !!}
     <label for="validationServer01">É admin?</label>
 </div> --}}
-
+@can('cadastrar')
 <div class="pt-4 pb-5 col-12" >
     <button type="submit" class="btn btn-success" name="SendFormContato" value="Enviar"><i class="fas fa-check"></i> Enviar</button>
     <button type="reset" class="btn btn-danger ml-3" ><i class="fas fa-eraser"></i> Limpar </button>
 </div>
+@endcan

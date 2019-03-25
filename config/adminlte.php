@@ -119,7 +119,7 @@ return [
         [
             'text' => 'Usuários',
             'icon' => 'users',
-            'role'  => 'Administrador',
+            'role' => 'Administrador',
             'submenu' => [
                 [
                     'text' => 'Listar Usuários',

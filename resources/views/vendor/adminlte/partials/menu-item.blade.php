@@ -1,3 +1,10 @@
+{{--
+<li class="active">
+        <a href="{{ route('home') }}" >
+            <i class="fa fa-fw fa-home"></i>
+            <span>Home</span>
+--}}
+
 @if (is_string($item))
     <li class="header">{{ $item }}</li>
 @else
@@ -24,3 +31,5 @@
         @endif
     </li>
 @endif
+
+
