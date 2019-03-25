@@ -37,6 +37,8 @@ $this->group(['prefix' => 'panel', 'namespace' => 'Panel', 'middleware' => ['aut
 
     $this->get('/', 'PanelController@index')->name('panel');
 
+    $this->get('contato', 'ContactController@send')->name('contact.send');
+
 });
 
 
