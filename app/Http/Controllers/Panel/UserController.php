@@ -266,6 +266,21 @@ class UserController extends Controller
                     ->with('error', 'Falha ao fazer upload.');
             }
 
+                            /*
+                            // Retorna mime type do arquivo (Exemplo image/png)
+                            $request->imagem->getMimeType()
+                            
+                            // Retorna o nome original do arquivo
+                            $request->imagem->getClientOriginalName() 
+                            
+                            // Extensão do arquivo
+                            $request->imagem->getClientOriginalExtension()
+                            $request->imagem->extension()
+                            
+                            // Tamanho do arquivo
+                            $request->imagem->getClientSize()
+                            */
+
         }
 
         if ($user->save()) {

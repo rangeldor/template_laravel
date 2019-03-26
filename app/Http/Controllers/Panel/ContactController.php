@@ -15,7 +15,6 @@ class ContactController extends Controller
     }
     */
    
-
     public function send(Request $request)
     {
         /*
