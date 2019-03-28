@@ -71,7 +71,7 @@ class AppServiceProvider extends ServiceProvider
             $event->menu->add('CONFIGURAÇÕES');
             $event->menu->add([
                 'text' => 'Alterar Senha',
-                'url' => route('users.edit', \Auth::user()->id),
+                'url' => route('users.edit', is_null(\Auth::user()) ? '0' : \Auth::user()->id),
                 'icon' => 'lock',
             ]);
 

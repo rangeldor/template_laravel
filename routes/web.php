@@ -22,12 +22,12 @@ $this->group(['prefix' => 'panel', 'namespace' => 'Panel', 'middleware' => ['aut
     $this->resource('city/{id}/airports', 'AirportController');
 
     $this->any('users/search', 'UserController@search')->name('users.search');
-    $this->resource('users', 'UserController', ['middleware' => ['permission:cadastrar|visualizar|atualizar|excluir']], function(){
-        return abort(403, 'Não Autorizado!');
+    $this->resource('users', 'UserController', ['middleware' => ['permission:cadastrar']], function(){
+        return view('errors.403');
     });
 
-    $this->resource('perfil', 'PerfilController', ['middleware' => ['permission:cadastrar|visualizar|atualizar|excluir']], function(){
-        return abort(403, 'Não Autorizado!');
+    $this->resource('perfil', 'PerfilController', ['middleware' => ['permission:cadastrar']], function(){
+        return view('errors.403');
     });
 
     $this->any('reserves/search', 'ReserveController@search')->name('reserves.search');
@@ -38,7 +38,6 @@ $this->group(['prefix' => 'panel', 'namespace' => 'Panel', 'middleware' => ['aut
     $this->get('/', 'PanelController@index')->name('panel');
 
     $this->get('contato', 'ContactController@send')->name('contact.send');
-
 });
 
 
