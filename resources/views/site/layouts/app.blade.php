@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>{{$title or 'Curso EspecializaTi'}}</title>
+        <title>{{$title or 'Titulo'}}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -144,12 +144,10 @@
 
         <div class="footer-copy">
             <div class="container">
-                <p>© EspecializaTi</p>
+                <p>© Daniel</p>
             </div>
         </div><!--Footer Copy-->
-
-
-
+        
         <!--JS-->
 
         <!--jQuery-->

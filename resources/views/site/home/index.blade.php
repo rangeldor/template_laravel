@@ -48,14 +48,14 @@
             </div>
             <div class="col-md-7">
                 
-                <div class="banner-ctc-titulo-contenedor"><span>Que tal assinar na EspecializaTi Academy?</span></div>
+                <div class="banner-ctc-titulo-contenedor"><span>Que tal assinar nosso plano?</span></div>
                 
                 <div>
-                    <p>ASSINE E TENHA ACESSO A TODOS OS NOSOS CURSOS DISPONÍVEL NA ESPECIALIZATI ACADEMY. MAIS BARATO QUE UM CAFÉ POR DIA!</p>
+                    <p>ASSINE E TENHA DESCONTO EM TODOS OS VÔOS!</p>
                 </div>
             </div>
             <div class="col-md-2">
-                <a href="https://academy.especializati.com.br" target="_blank" class="btn pull-right btn-flat flat-medium third-level">
+                <a href="https://google.com.br" target="_blank" class="btn pull-right btn-flat flat-medium third-level">
                     <span>Saiba Mais</span>
                 </a>
             </div>

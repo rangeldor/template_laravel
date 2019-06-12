@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'Marketing&Code',
+    'title' => 'Nome Empresa',
 
     'title_prefix' => '',
 
@@ -30,10 +30,10 @@ return [
     |
     */
 
-   // 'logo' => '<img src="../assets/panel/imgs/icone-especializati.png" alt="Nome da Empresa" class="logo-painel">',
-   'logo' => 'Marketing&Code',
-   //'logo_mini' => '<img src="../assets/panel/imgs/icone-especializati.png" alt="Nome da Empresa" class="logo-painel">',
-   'logo_mini' => 'M&C',
+   
+   'logo' => 'Nome Empresa',
+   
+   'logo_mini' => 'N&E',
 
     /*
     |--------------------------------------------------------------------------

@@ -22,13 +22,9 @@ $this->group(['prefix' => 'panel', 'namespace' => 'Panel', 'middleware' => ['aut
     $this->resource('city/{id}/airports', 'AirportController');
 
     $this->any('users/search', 'UserController@search')->name('users.search');
-    $this->resource('users', 'UserController', ['middleware' => ['permission:cadastrar']], function(){
-        return view('errors.403');
-    });
+    $this->resource('users', 'UserController', ['middleware' => ['role:Administrador']]);
 
-    $this->resource('perfil', 'PerfilController', ['middleware' => ['permission:cadastrar']], function(){
-        return view('errors.403');
-    });
+    $this->resource('perfil', 'PerfilController', ['middleware' => ['role:Administrador']]);
 
     $this->any('reserves/search', 'ReserveController@search')->name('reserves.search');
     $this->resource('reserves', 'ReserveController', [
